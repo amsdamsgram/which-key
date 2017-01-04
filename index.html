@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Which keycode</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Fira Mono', monospace;
+        font-size: 120px;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .content label {
+        margin: 0 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <label class="key">Type something!</label>
+      <label class="keycode"></label>
+    </div>
+
+    <script>
+      var shiftIsDown = false
+      const shiftKeycode = 16
+
+      document.addEventListener('keyup', function(e) {
+        const key = document.querySelector('.key')
+        const keycode = document.querySelector('.keycode')
+
+        // Don't display shift keycode when another key is being pressed
+        if (shiftIsDown && keycode === shiftKeycode) return;
+
+        key.textContent = e.key || ''
+        keycode.textContent = e.which || e.keyCode
+      })
+
+      document.addEventListener('keydown', function(e) {
+        const keycode = e.which || e.keyCode
+        if (keycode === shiftKeycode) {
+          shiftIsDown = true
+        }
+      })
+    </script>
+  </body>
+</html>
