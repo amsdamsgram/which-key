@@ -1,0 +1,13 @@
+body {
+  font-family: 'Fira Mono', monospace;
+  font-size: 120px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.content label {
+  margin: 0 15px;
+}
