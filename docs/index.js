@@ -1,3 +1,4 @@
+// use var to make it compatible with Safari
 var shiftIsDown = false
 const shiftKeycode = 16
 
