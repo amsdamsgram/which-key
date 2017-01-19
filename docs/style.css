@@ -1,6 +1,18 @@
 body {
   font-family: 'Fira Mono', monospace;
+  overflow: hidden;
 }
+
+.github_link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.github_link__triangle {
+  fill: lightgrey;
+}
+
 .content {
   display: flex;
   flex-direction: column;
